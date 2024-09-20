@@ -69,6 +69,7 @@ getNewQuestion = () => {
     }
     questionCounter++;
     progressText.innerText = `Question ${questionCounter}/${MAX_QUESTIONS}`;
+
     //Update the progress bar
     progressBarFull.style.width = `${(questionCounter / MAX_QUESTIONS) * 100}%`;
 
@@ -84,7 +85,7 @@ getNewQuestion = () => {
     availableQuesions.splice(questionIndex, 1);
     acceptingAnswers = true;
 
-    // Clear any existing timer and set a new one for 5 seconds
+    // Clear any existing timer and set a new one for 10 seconds
     clearTimeout(timer);
     timer = setTimeout(() => {
         getNewQuestion();
